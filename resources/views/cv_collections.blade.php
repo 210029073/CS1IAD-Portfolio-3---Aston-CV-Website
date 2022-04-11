@@ -1,49 +1,77 @@
 @extends('layouts.app')
 
 <head>
+
+    <title>Search for CVs</title>
+
     <style>
         div+div{
             margin-top: 3rem;
             -top: 3rem;
             border-top: 1px solid #6b7280;
         }
+
+        #searchBar > h1
+        {
+            line-height: 1rem;
+            text-align: center;
+        }
+
+        #searchBar{
+            padding: 150px;
+            margin: auto;
+            width: 100%;
+            background-color: lightgrey;
+        }
+
+        #searchBar > form > input {
+            width: 100%;
+        }
+
+        #searchBar > form > div {
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+
+
+        #searchBar > form > div > input {
+
+            margin: 1.25% 1%;
+
+        }
+
+        #searchContainer
+        {
+
+            line-height: 1rem;
+            margin: auto;
+            width: 80%;
+        }
+
+        .card-container
+        {
+            display: flex;
+            flex-wrap:wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
     </style>
 </head>
 
-@section('cvCollection')
-
-    <table>
-        <tr>
-            <th>Full Name</th>
-            <th>Email Address</th>
-            <th>Programming Languages</th>
-            <th>Education</th>
-        </tr>
-        @foreach ($cvCollections as $single)
-            <tr>
-                <td>{{ $single->name }}</td>
-                <td>{{ $single->email }}</td>
-                <td>{{ $single->keyprogramming }}</td>
-                {{--            <td>{{ $single->education }}</td>--}}
-                <td>
-                    @foreach(explode(',', $single->education) as $fields)
-                        <p>{{ $fields }}</p>
-                    @endforeach
-                </td>
-            </tr>
-        @endforeach
-    </table>
-
-@endsection
-
 @section('query')
-
-    <h1>Search</h1>
-    <form method="GET" action="#">
-        <input name="search" placeholder="Search results"/>
-        <input type="reset" onclick="window.location.replace('cvs')"/>
-        <input type="submit" value="Search"/>
-    </form>
+    <div id="searchBar">
+        <h1>Search for CVs</h1>
+        <br/>
+        <form method="GET" action="#">
+            <input class="form-control" name="search" placeholder="Search results" required/>
+            <br/>
+            <div>
+                <input class="btn btn-primary" type="submit" value="Search"/>
+                <input class="btn btn-primary" type="reset" onclick="window.location.replace('cvs')"/>
+            </div>
+        </form>
+    </div>
 @endsection
 
 @section('cvCollectionSummary')
@@ -53,38 +81,56 @@
     @endif
 
     @if(!empty($_GET['search']))
+        @yield('query')
 
-        <div id="searchBar">
-            @yield('query')
-        </div>
+        <br/>
+        <div id="searchContainer">
+            <hr/>
+            <h1>You have currently searched  '{{$_GET['search']}}'</h1>
 
+            <hr/>
+        <br/>
+        <div class="card-container">
         @foreach ($cvCollections as $single)
-
-            <div>
-
-                <a href="cvs/{{$single -> id}}"><h2>{{ $single -> name  }}'s CV</h2></a>
-                <p>CV Holder's Full Name:</p>
-                <p>{{ $single->name }}</p>
-
-                <br/>
-
-                <p>CV Holder's Email Address:</p>
-                <p> {{ $single->email }}</p>
+            <div class="card" >
+                <div class="card-body">
+                <a class="card-title" href="cvs/{{$single -> id}}"><h2>{{ $single -> name  }}'s CV</h2></a>
+                <h3 class="">CV Holder's Full Name:</h3>
+                <p class="card-text">{{ $single->name }}</p>
 
                 <br/>
 
-                <p>CV Holder's Programming Language:</p>
-                <p>{{ $single->keyprogramming }}</p>
+                <h3 class="">CV Holder's Email Address:</h3>
+                <p class="card-text"> {{ $single->email }}</p>
 
                 <br/>
 
-                <p>CV Holder's Place of Education:</p>
+                <h3 class="">CV Holder's Programming Language:</h3>
+                    <ul>
+                    @foreach(explode(',', $single->keyprogramming) as $fields)
+                            <li class="card-text">{{ $fields }}</li>
+                        @endforeach
+                    </ul>
+{{--                <p class="card-text">{{ $single->keyprogramming }}</p>--}}
+
+                <br/>
+
+                <h3 class="">CV Holder's Place of Education:</h3>
+                    <ul>
                 @foreach(explode(',', $single->education) as $fields)
-                    <p>{{ $fields }}</p>
+                        <li class="card-text">{{ $fields }}</li>
                 @endforeach
+                    </ul>
+                    <button class="btn btn-primary" onclick="window.location.replace('cvs/{{$single->id}}')">Visit CV</button>
+                </div>
             </div>
-        @endforeach
-        {{$cvCollections->links()}}
+            @endforeach
+        </div>
+            <br/><br/>
+            <br/><br/>
+            {{$cvCollections->links()}}
+
+        </div>
 
     @endif
 

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id()->unsigned()->nullable(false)->autoIncrement(2);
             $table->string('name',100)->nullable(false);
             $table->string('email',100)->nullable(false)->unique();
-            $table->string('password', 255)->nullable(false);
+	        $table->foreign('email')->references('email')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->string('keyprogramming')->default(null)->nullable(true);
             $table->string('profile')->default(null)->nullable(true);
             $table->string('education')->default(null)->nullable(true);

@@ -1,72 +1,66 @@
-<html>
+@extends('layouts.app')
+<head>
+    <title>{{$cvs -> name}}'s CV</title>
+</head>
 
-    <head>
-        <style>
-            body
-            {
-                font-family: Arial, Helvetica, sans-serif;
-                margin: auto;
-                width: 60%;
-            }
-            table{
-                width: 100%;
-                border-collapse: collapse;
-            }
-            td,th {
-                border: 1px solid #dddddd;
-                text-align: left;
-                padding: 10px;
+        @section('currentCV')
 
-            }
+            <section>
+                <br/><br/>
+                <div class="card" style="margin: auto; width: 60%;">
 
-            tr:nth-child(even)
-            {
-                background-color: rgb(116, 227, 156);
-            }
+                    <div class="card-header">
+                        <br/>
+                        <h1 class="card-title" style="text-align: center">{{ $cvs -> name  }}'s CV Summary</h1>
+                        <br/>
+                    </div>
+                    <div class="cvBody card-body" style="margin:auto;">
 
-            section + section
-            {
-                margin-top: 5%;
-            }
+                         <h3 class="card-title">CV Holder's Full Name:</h3>
+                            <p>{{ $cvs->name }}</p>
 
-            footer{
-                padding: 3.5%;
-                background-color: #6b7280;
-            }
-        </style>
-    </head>
+                            <br/>
 
-    <body>
-        <section>
-            <div>
+                            <h3 class="card-title">CV Holder's Email Address:</h3>
+                            <p class="card-text"> {{ $cvs->email }}</p>
 
-                <h2>{{ $cvs -> name  }}'s CV</h2>
-                <p>CV Holder's Full Name:</p>
-                <p>{{ $cvs->name }}</p>
+                            <br/>
 
-                <br/>
+                            <h3 class="card-title">CV Holder's Programming Language:</h3>
+                            <ul>
+                                @foreach(explode(',', $cvs->keyprogramming) as $field)
+                                    <li class="card-text">{{$field}}</li>
+                                @endforeach
+                            </ul>
+                            <br/>
 
-                <p>CV Holder's Email Address:</p>
-                <p> {{ $cvs->email }}</p>
+                            <h3 class="card-title">CV Holder's Place of Education:</h3>
+                            <ul>
+                                @foreach(explode(',', $cvs->education) as $fields)
+                                    <li>{{ $fields }}</li>
+                                @endforeach
+                            </ul>
 
-                <br/>
+                        <br/>
 
-                <p>CV Holder's Programming Language:</p>
-                <p>{{ $cvs->keyprogramming }}</p>
+                        <h3 class="card-title">CV Holder's Profile</h3>
+                        @foreach(explode(',', $cvs->profile) as $fields)
+                            <li>{{ $fields }}</li>
+                        @endforeach
 
-                <br/>
+                        <br/>
 
-                <p>CV Holder's Place of Education:</p>
-{{--                <p>{{ $curriculumVitaes->education }}</p>--}}
-                @foreach(explode(',', $cvs->education) as $fields)
-                    <p>{{ $fields }}</p>
-                @endforeach
+                        <h3 class="card-title">CV Holder's URL links</h3>
+                        @foreach(explode(',', $cvs->URLlinks) as $fields)
+                            <li><a href="{{ $fields }}">{{ $fields }}</a></li>
+                        @endforeach
 
-            </div>
-        </section>
+                        <br/>
 
-        <section>
-            <a href="../cvs">Go Back>></a>
-        </section>
-    </body>
-</html>
+                        <a class="btn btn-primary" href="../cvs">Return to Search</a>
+                    </div>
+                </div>
+            </section>
+        @endsection
+
+        @yield('createCV')
