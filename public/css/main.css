@@ -1,0 +1,503 @@
+/**
+* PARENT CSS Stylesheet
+* Created By: Ibrahim Ahmad (210029073)
+*/
+html,
+body {
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: hidden;
+    scrollbar-color: #05472a limegreen;
+    scrollbar-width: thin;
+    height:100%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: limegreen;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #0b9e5e;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #05472a;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul > li {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main-header {
+    margin: 0px auto;
+    width: 100%;
+    height: auto;
+    background-color: rgb(235, 235, 235);
+    padding-top: 2.5%;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 2.5%;
+    line-height: 2rem;
+}
+
+#main-header >  h1 {
+    text-align: center;
+    font-weight: bolder;
+}
+
+#main-header >  p {
+    text-align: center;
+    font-weight: normal;
+    font-size: large;
+}
+
+#container {
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    min-height: auto;
+    overflow: auto;
+}
+
+#uxExperience > form {
+    width: auto;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+#uxExperience > form > h3 {
+    text-align: center;
+}
+
+#uxExperience > form > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+}
+
+.homeContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: auto;
+}
+
+.projects {
+    height: auto;
+}
+
+#education {
+    width: 50%;
+    height: auto;
+}
+
+#container > div > blockquote > ul > li {
+    list-style: none;
+}
+
+#softSkills {
+    /* display: flex;
+      flex-wrap: nowrap; */
+    width: 50%;
+    height: auto;
+}
+
+#interests {
+    width: 50%;
+    height: auto;
+}
+
+#profile {
+    width: 50%;
+    height: auto;
+}
+
+#work_experience {
+    width: 50%;
+    height: auto;
+}
+
+#contacts {
+    height: auto;
+    width: 50%;
+}
+
+#navButtons {
+    padding: 20px;
+    background-color: darkgreen;
+    box-shadow: 10px 10px 5px 15px grey;
+}
+
+#login {
+    padding: 20px;
+    background-color: darkgreen;
+    box-shadow: 10px 10px 5px 15px grey;
+    float: right;
+}
+
+#navButtons > span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    width: 5%;
+    user-select: none;
+    color: white;
+    padding-right: 15px;
+}
+
+#navButtons > a {
+    background-color: limegreen;
+    user-select: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    padding: 15px;
+    margin-right: 1%;
+    border-radius: 5px;
+}
+
+#navButtons > a:hover {
+    background-color: #eee;
+    color: black;
+    transition-duration: 0.5s;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#previousProjects {
+    width: 45%;
+    padding-right: 5px;
+}
+
+#currentProjects {
+    width: 45%;
+    padding-left: 5px;
+}
+
+#project {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+#experienceIDCSharp {
+    padding-right: 3%;
+    padding-left: 3%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: darkgreen;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(235, 235, 235);
+}
+
+#experienceIDCpp {
+    padding-right: 9%;
+    padding-left: 9%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: darkblue;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(235, 235, 235);
+    text-align: center;
+    text-indent: 12px;
+}
+
+#experienceIDHTML {
+    padding-right: 23.25%;
+    padding-left: 23.25%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #e84a1a;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(235, 235, 235);
+    text-align: center;
+    text-indent: 12px;
+}
+
+#experienceIDCSS {
+    padding-right: 16.75%;
+    padding-left: 16.75%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #1a5ee8;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(235, 235, 235);
+    text-align: center;
+    text-indent: 12px;
+}
+
+#experienceIDJS {
+    padding-right: 13.5%;
+    padding-left: 13.5%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #e8da1a;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-indent: 12px;
+}
+
+#experienceIDJAVA {
+    padding-right: 18.25%;
+    padding-left: 18.25%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #e8701a;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(235, 235, 235);
+    text-align: center;
+    text-indent: 12px;
+}
+
+#experienceIDLinux {
+    padding-right: 13.25%;
+    padding-left: 13.25%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(235, 235, 235);
+    text-align: center;
+    text-indent: 12px;
+}
+
+.footer {
+
+    position: relative;
+    padding: 1%;
+    margin-top: 10%;
+    width: 100%;
+    height: auto;
+    background: rgb(100, 100, 100);
+    clear: both;
+    bottom: 0;
+}
+
+#app {
+    padding-bottom: 10%;
+}
+
+#profile > div {
+    width: 80%;
+}
+
+#profile > div > span {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+#contact-me {
+    background-color: white;
+    margin: 0px auto;
+    width: 80%;
+    padding: 2px 50px 2px;
+}
+
+#contact-me > span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+
+
+#submitMsg {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #267933;
+    font-weight: bold;
+    display: none;
+}
+
+#hardSkills-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 90%;
+}
+
+#hardSkills-content > div {
+    padding: 10px 7.5px;
+}
+
+button#btnSubmitRegister {
+    background-color: limegreen;
+    padding: 10px 45px 10px;
+    border: 0.5px white solid;
+    color: #ffffff;
+    transition-duration: 1.2s;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-right: 2.5%;
+}
+
+button#btnSubmitRegister:hover {
+    border: black 0.5px solid;
+    background-color: #eee;
+    color: black;
+}
+
+span#error {
+    display: none;
+    padding: 2.5% 5% 2.5%;
+    background-color: rgb(211, 127, 127);
+    /* border-color:  1px; */
+    border: 1px solid #610909;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+span#errorEmail {
+    display: none;
+    padding: 2.5% 5% 2.5%;
+    background-color: rgb(211, 127, 127);
+    /* border-color:  1px; */
+    border: 1px solid #610909;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.footer > nav {
+    margin: 0px auto;
+    padding: 0.75%;
+}
+
+.footer > nav > span {
+    padding: 10px;
+}
+
+.footer > nav > span#social {
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer > nav > span#pages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 5px;
+    margin: 0px auto;
+}
+
+.footer > nav > span#pages > a {
+    margin-left: 10px;
+    padding: 15px;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    text-decoration-line: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    border-radius: 5px;
+}
+
+.footer > nav > span#social > a {
+    padding: 0px 5px 0px;
+    margin-left: 10px;
+    text-decoration-line: none;
+}
+
+.footer > span
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    padding: 1.25px;
+}
+
+@media screen and (max-width: 700px) {
+    #navButtons > span {
+        width: 100%;
+
+        text-align: center;
+    }
+    #navButtons > a {
+        padding: 1.5%;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    #navButtons {
+        height: 10%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer > span {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .footer > nav > span#pages {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 5px;
+        margin: 0px auto;
+    }
+
+    .footer > nav > span#pages > a {
+        margin-bottom: 10px;
+        padding: 15px;
+        background-color: white;
+        color: rgb(0, 0, 0);
+        text-decoration-line: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bolder;
+        text-align: center;
+        border-radius: 5px;
+    }
+}
+
+#checkBoxContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+#checkBoxContainer > div {
+    width: 5%;
+}
+
+#checkBoxContainer > div ~ div {
+    width: 95%;
+}
+.cvBody {
+    width: 95%;
+}

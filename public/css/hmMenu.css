@@ -1,0 +1,37 @@
+/*
+* Hamburger Menu Stylesheet
+* Created by: Ibrahim Ahmad (210029073)
+*/
+.hmMenu a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: #267933;
+    color: white;
+    border-radius: 3px;
+    transition-duration: 0.8s;
+}
+
+a#icon > i.fa {
+    font-size: large;
+    font-weight: bold;
+}
+
+#icon {
+    color: white;
+    font-weight: bold;
+    user-select: none;
+}
+
+#links{
+    display: none;
+}
+
+.hmMenu a:hover {
+    padding: 10px;
+    text-decoration: none;
+    background-color: #c4c4c4;
+    color: black;
+    border-radius: 3px;
+    transition-duration: 0.8s;
+}

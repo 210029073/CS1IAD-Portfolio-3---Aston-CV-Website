@@ -1,0 +1,63 @@
+/* Sign Up Dialog Box */
+
+.signUpSum {
+    background-color: darkgreen;
+    top: 0;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 15px;
+    padding-bottom: 50px;
+    margin: 0px auto;
+    width: 75%;
+    height: 50%;
+    overflow: auto;
+}
+
+/* Modal Content */
+
+.signUpSum-Container {
+    background-color: white;
+    margin: 0px auto;
+    padding: 2.5px 50px 2.5px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.signUpSum > button#btnClose {
+    float: right;
+    padding: 10px 30px 10px;
+    background-color: limegreen;
+    transition-duration: 0.8s;
+    border: white 0.5px solid;
+    font-weight: bold;
+    color: #eee;
+    border-radius: 6px;
+    margin-right: 2.5%;
+}
+
+.signUpSum > button#btnClose:hover {
+    background-color: #eee;
+    color: black;
+    border: 0.5px solid black;
+    transition-duration: 0.8s;
+}
+
+.signUpSum > button#btnSubmit {
+    float: right;
+    background-color: limegreen;
+    padding: 10px 45px 10px;
+    border: 0.5px white solid;
+    color: #ffffff;
+    transition-duration: 1.2s;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-right: 2.5%;
+}
+
+.signUpSum > button#btnSubmit:hover {
+    border: black 0.5px solid;
+    background-color: #eee;
+    color: black;
+}
+
